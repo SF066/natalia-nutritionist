@@ -234,6 +234,13 @@ section { scroll-margin-top: 82px; }
 .pept-points li { display: flex; gap: 13px; align-items: flex-start; font-size: 1.02rem; color: #DDE4D8; }
 .pept-points .chk { width: 24px; height: 24px; border-radius: 50%; background: var(--mauve); color: #fff; display: grid; place-items: center; flex: none; margin-top: 2px; }
 .pept-points .chk svg { width: 14px; height: 14px; }
+.pept-groups { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 24px 0 6px; }
+.pept-group { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); border-radius: var(--radius-sm); padding: 16px 18px; }
+.pg-title { display: block; font-family: var(--serif); font-size: 1.06rem; color: #F2ECE0; }
+.pg-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 9px; }
+.pg-tags span { font-size: .78rem; font-weight: 600; color: var(--mauve-soft); background: rgba(134,194,200,.12); border: 1px solid rgba(134,194,200,.32); border-radius: 999px; padding: 4px 10px; }
+.pept-group > p { font-size: .9rem; color: #C6CFC2; line-height: 1.5; }
+@media (max-width: 560px) { .pept-groups { grid-template-columns: 1fr; } }
 .pept-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .pstat { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); border-radius: var(--radius); padding: 24px; }
 .pstat b { display: block; font-family: var(--serif); font-size: 2.4rem; color: #fff; line-height: 1; }
