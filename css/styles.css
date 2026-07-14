@@ -557,10 +557,10 @@ section { scroll-margin-top: 74px; }
 
 /* --- HERO: плашки-статы на фото, обрезка справа --- */
 .hero { padding: clamp(10px, 1.6vw, 22px) 0 clamp(24px, 3.5vw, 48px); }
-.hero-grid { grid-template-columns: 1.1fr .9fr; align-items: start; gap: clamp(28px, 4vw, 60px); }
+.hero-grid { grid-template-columns: 1.28fr .72fr; align-items: start; gap: clamp(24px, 3vw, 44px); }
 .hero-copy { max-width: 600px; }
 .hero-copy .eyebrow { margin-bottom: 18px; }
-.hero h1 { font-size: clamp(2.1rem, 4.2vw, 3.35rem); margin-top: 0; }
+.hero h1 { font-size: clamp(1.75rem, 3.1vw, 2.5rem); margin-top: 0; white-space: nowrap; }
 .hero-sub { margin-top: 18px; max-width: 34em; }
 .hero-cta { margin-top: 26px; }
 .hero-note { margin-top: 15px; }
@@ -599,7 +599,7 @@ section { scroll-margin-top: 74px; }
 .spec-dots { margin-top: 22px; }
 
 /* --- PEPTIDES: крупное фото-портрет --- */
-.pept { grid-template-columns: 1.02fr .98fr; }
+.pept { grid-template-columns: .9fr 1.1fr; }
 .pept { align-items: stretch; }
 .pept-figure { align-self: stretch; display: flex; }
 .pept-figure img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; border-radius: var(--radius); box-shadow: 0 36px 72px -34px rgba(0,0,0,.6); }
@@ -630,7 +630,7 @@ section { scroll-margin-top: 74px; }
   /* раскрываем колонку в общий поток, чтобы фото встало сразу после заголовка */
   .hero-copy { display: contents; }
   .hero .eyebrow { order: 1; margin: 4px 0 8px; display: flex; flex-wrap: wrap; max-width: 100%; }
-  .hero h1 { order: 2; }
+  .hero h1 { order: 2; white-space: normal; }
   .hero-figure { order: 3; width: 100%; max-width: 440px; height: auto; min-height: 0; margin: 18px auto 4px; overflow: visible; align-items: center; justify-content: center; }
   .hero-figure::before { display: none; }
   .hero-cut { display: none; }
