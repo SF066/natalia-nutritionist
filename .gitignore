@@ -1,0 +1,9 @@
+# СЕКРЕТ: содержит живой токен amoCRM — НЕ коммитить (на Pages PHP не нужен)
+amo.php
+
+# служебное
+.DS_Store
+build/
+*.b64
+assets/*_emb.jpg
+assets/hero-cut-old.png
