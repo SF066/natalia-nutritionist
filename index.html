@@ -57,7 +57,7 @@
         <p class="hero-sub">Помогаю женщинам похудеть без срывов и диет, вернуть энергию и сияющую, красивую внешность. Большой практический опыт в нутрициологии и пептидной терапии с доказанной эффективностью - работаю по вашим анализам и веду на каждом этапе.</p>
         <div class="hero-cta">
           <a class="btn" href="#lead" data-lead="free">Бесплатная диагностика</a>
-          <a class="btn btn--ghost" href="#method">Как я работаю</a>
+          <a class="btn btn--ghost" href="#results">Результаты</a>
         </div>
         <p class="hero-note">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
@@ -251,24 +251,27 @@
     </div>
   </section>
 
-  <!-- ============ METHOD ============ -->
+  <!-- ============ METHOD (пептидная методика) ============ -->
   <section class="band" id="method">
     <div class="wrap">
       <div class="method-intro">
         <div class="sec-head">
-          <span class="eyebrow">Мой подход</span>
-          <h2>Не универсальная диета, а протокол под вашу биохимию</h2>
-          <p class="lead">Интегративный подход соединяет данные анализов, ваши симптомы и образ жизни. Так мы находим настоящую причину и работаем точечно.</p>
+          <span class="eyebrow">Методика пептидной терапии</span>
+          <h2>Пептидная терапия по шагам: от анализов до результата</h2>
+          <p class="lead">Пептиды дают результат только в грамотной схеме. Я выстраиваю протокол на данных ваших анализов, целях и самочувствии - с точными дозировками, доказательным подбором и контролем на каждом этапе.</p>
         </div>
         <figure class="method-banner reveal">
-          <img src="assets/method-consult.jpg" alt="Наталия Матасова на консультации с клиенткой" loading="lazy" width="1672" height="941">
+          <img src="assets/method-consult.jpg" alt="Наталия Матасова подбирает протокол пептидной терапии" loading="lazy" width="1672" height="941">
         </figure>
       </div>
       <div class="method-grid">
-        <div class="mcard reveal"><div class="num">01</div><h3>Диагностика</h3><p>Разбираем жалобы, анамнез, анализы и привычки. Формулируем реальную цель.</p></div>
-        <div class="mcard reveal"><div class="num">02</div><h3>Причина</h3><p>Находим корень: дефициты, гормоны, ЖКТ, обмен веществ - а не только симптом.</p></div>
-        <div class="mcard reveal"><div class="num">03</div><h3>Протокол</h3><p>Питание, микронутриенты и нутрицевтики. При необходимости - работа с пептидами.</p></div>
-        <div class="mcard reveal"><div class="num">04</div><h3>Сопровождение</h3><p>Ведем до результата, корректируем план и закрепляем привычки.</p></div>
+        <div class="mcard reveal"><div class="num">01</div><h3>Диагностика и анализы</h3><p>Разбираю запрос, анамнез и анализы. Определяю, какие пептиды вам подходят и с чего безопасно начать.</p></div>
+        <div class="mcard reveal"><div class="num">02</div><h3>Подбор пептидов</h3><p>Подбираю схему строго индивидуально: пептиды для снижения веса или anti-age под ваш организм и цель.</p></div>
+        <div class="mcard reveal"><div class="num">03</div><h3>Протокол и дозировки</h3><p>Составляю точный протокол: препараты, дозировки, график и совместимость с питанием и нутрицевтиками.</p></div>
+        <div class="mcard reveal"><div class="num">04</div><h3>Контроль и сопровождение</h3><p>Веду вас на курсе: контролирую дозировки, самочувствие и безопасность, корректирую схему до результата.</p></div>
+      </div>
+      <div class="sec-cta">
+        <a class="btn" href="#lead" data-lead="free">Подобрать протокол с пептидами</a>
       </div>
     </div>
   </section>
@@ -384,7 +387,6 @@
         <p>Оставьте заявку - я свяжусь с вами, отвечу на вопросы и мы подберем удобное время. Бесплатно, без спама и давления.</p>
         <div class="hero-cta" style="justify-content:center">
           <a class="btn" href="#lead" data-lead="free">Бесплатная диагностика</a>
-          <a class="btn btn--ghost" href="#lead" data-lead="paid">Платная консультация</a>
         </div>
       </div>
     </div>
@@ -410,10 +412,7 @@
       </aside>
 
       <form class="lead-form" id="leadForm" novalidate>
-        <div class="seg" role="radiogroup" aria-label="Тип заявки">
-          <label><input type="radio" name="lead_type" value="free" checked><span class="pill">Бесплатная диагностика<small>онлайн, без оплаты</small></span></label>
-          <label><input type="radio" name="lead_type" value="paid"><span class="pill">Платная консультация<small>глубокий разбор</small></span></label>
-        </div>
+        <input type="hidden" name="lead_type" value="free">
 
         <div class="field">
           <label class="lbl" for="f-name">Ваше имя</label>
@@ -475,7 +474,6 @@
       <div>
         <h4>Связь</h4>
         <a href="#lead" data-lead="free">Бесплатная диагностика</a>
-        <a href="#lead" data-lead="paid">Записаться на консультацию</a>
         <a href="privacy.html">Политика конфиденциальности</a>
       </div>
     </div>
