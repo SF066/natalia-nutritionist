@@ -241,6 +241,7 @@ section { scroll-margin-top: 82px; }
 .pg-tags span { font-size: .78rem; font-weight: 600; color: var(--mauve-soft); background: rgba(134,194,200,.12); border: 1px solid rgba(134,194,200,.32); border-radius: 999px; padding: 4px 10px; }
 .pept-group > p { font-size: .9rem; color: #C6CFC2; line-height: 1.5; }
 @media (max-width: 560px) { .pept-groups { grid-template-columns: 1fr; } }
+.pept-trust { margin-top: 18px; font-size: .95rem; color: #DDE4D8; border-left: 3px solid var(--mauve-soft); padding-left: 14px; line-height: 1.55; }
 .pept-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .pstat { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); border-radius: var(--radius); padding: 24px; }
 .pstat b { display: block; font-family: var(--serif); font-size: 2.4rem; color: #fff; line-height: 1; }
