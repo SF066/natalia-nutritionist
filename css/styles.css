@@ -349,6 +349,37 @@ section { scroll-margin-top: 82px; }
 .form-msg.ok { display: block; background: var(--sage-tint); color: var(--forest); border: 1px solid var(--sage); }
 .form-msg.err { display: block; background: var(--mauve-tint); color: var(--mauve); border: 1px solid var(--mauve-soft); }
 
+/* ---------- Всплывающее уведомление ---------- */
+.nm-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  z-index: 120;
+  max-width: min(520px, calc(100vw - 32px));
+  padding: 16px 22px;
+  border-radius: var(--radius-sm);
+  background: var(--forest);
+  color: #F2F7F5;
+  font-family: var(--sans);
+  font-size: .98rem;
+  line-height: 1.45;
+  text-align: center;
+  box-shadow: 0 18px 44px -18px rgba(15, 82, 87, .55);
+  border: 1px solid var(--sage);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, 16px);
+  transition: opacity .28s ease, transform .28s ease, visibility .28s;
+}
+.nm-toast.show { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+@media (max-width: 560px) {
+  .nm-toast { bottom: 16px; padding: 14px 18px; font-size: .93rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nm-toast { transition: opacity .01s, visibility .01s; transform: translate(-50%, 0); }
+}
+
 /* ---------- Footer ---------- */
 .site-foot { background: var(--forest-deep); color: #C6CFC2; padding: 54px 0 30px; }
 .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 30px; }

@@ -128,6 +128,26 @@
     document.body.classList.remove("modal-open");
     if (lastFocus && lastFocus.focus) lastFocus.focus();
   }
+  /* ---- Всплывающее уведомление ---- */
+  var toastTimer = null;
+  function showToast(text) {
+    var t = document.getElementById("nmToast");
+    if (!t) {
+      t = document.createElement("div");
+      t.id = "nmToast";
+      t.className = "nm-toast";
+      t.setAttribute("role", "status");
+      t.setAttribute("aria-live", "polite");
+      t.addEventListener("click", function () { t.classList.remove("show"); });
+      document.body.appendChild(t);
+    }
+    t.textContent = text;
+    void t.offsetWidth;
+    t.classList.add("show");
+    if (toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { t.classList.remove("show"); }, 7000);
+  }
+
   Array.prototype.forEach.call(document.querySelectorAll("[data-lead]"), function (a) {
     a.addEventListener("click", function (e) {
       e.preventDefault();
@@ -193,7 +213,9 @@
         .then(function (res) {
           if (res.ok && res.j && res.j.ok) {
             form.reset();
-            setMsg("ok", "Заявка отправлена. Я свяжусь с вами в ближайшее время, будьте на связи.");
+            setMsg("", "");
+            closeModal();
+            showToast("Заявка отправлена. Я свяжусь с вами в ближайшее время. Будьте, пожалуйста, на связи!");
             if (window.ym && window.NM_METRIKA_ID) window.ym(window.NM_METRIKA_ID, "reachGoal", "lead_sent");
           } else {
             setMsg("err", "Не удалось отправить. Напишите мне напрямую или попробуйте позже.");
