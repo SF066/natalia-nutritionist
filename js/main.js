@@ -104,12 +104,31 @@
     tstTrack.dataset.cloned = "1";
   }
 
+  /* ---- Цели Метрики ---- */
+  function ymGoal(name, params) {
+    if (window.ym && window.NM_METRIKA_ID) window.ym(window.NM_METRIKA_ID, "reachGoal", name, params);
+  }
+
+  /* Дочитал до 75% страницы */
+  var deepScrollSent = false;
+  window.addEventListener("scroll", function () {
+    if (deepScrollSent) return;
+    var doc = document.documentElement;
+    var full = Math.max(doc.scrollHeight, document.body.scrollHeight);
+    if (full <= window.innerHeight) return;
+    if ((window.scrollY + window.innerHeight) / full >= 0.75) {
+      deepScrollSent = true;
+      ymGoal("scroll_75");
+    }
+  }, { passive: true });
+
   /* ---- Модальное окно заявки ---- */
   var form = document.getElementById("leadForm");
   var modal = document.getElementById("leadModal");
   var lastFocus = null;
   function openModal(leadType) {
     if (!modal) return;
+    ymGoal("lead_form_open");
     if (leadType && form) {
       var input = form.querySelector('input[name="lead_type"][value="' + leadType + '"]');
       if (input) input.checked = true;
@@ -216,13 +235,15 @@
             setMsg("", "");
             closeModal();
             showToast("Заявка отправлена. Я свяжусь с вами в ближайшее время. Будьте, пожалуйста, на связи!");
-            if (window.ym && window.NM_METRIKA_ID) window.ym(window.NM_METRIKA_ID, "reachGoal", "lead_sent");
+            ymGoal("lead_sent");
           } else {
             setMsg("err", "Не удалось отправить. Напишите мне напрямую или попробуйте позже.");
+            ymGoal("lead_error", { reason: "server" });
           }
         })
         .catch(function () {
           setMsg("err", "Ошибка сети. Проверьте соединение и попробуйте еще раз.");
+          ymGoal("lead_error", { reason: "network" });
         })
         .then(function () {
           submitBtn.disabled = false;
